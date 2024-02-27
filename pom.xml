@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.6</version>
+        <version>3.2.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -14,9 +14,11 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
-        <java.version>17</java.version>
-        <jooq.version>3.16.6</jooq.version>
-        <testcontainers.version>1.16.3</testcontainers.version>
+        <java.version>21</java.version>
+        <!-- The following version properties could be omitted
+        as they're now included in the Spring Boot dependency versions -->
+        <!--<jooq.version>3.16.6</jooq.version>-->
+        <!--<testcontainers.version>1.16.3</testcontainers.version>-->
 
         <db.username>sakila</db.username>
         <db.password>sakila</db.password>
@@ -38,6 +40,10 @@
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-mysql</artifactId>
         </dependency>
 
         <dependency>
