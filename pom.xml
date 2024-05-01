@@ -5,7 +5,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.3</version>
+        <version>3.2.5</version>
+        <!--<version>2.7.18</version>-->
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -17,7 +18,7 @@
         <java.version>21</java.version>
         <!-- The following version properties could be omitted
         as they're now included in the Spring Boot dependency versions -->
-        <!--<jooq.version>3.16.6</jooq.version>-->
+        <jooq.version>3.16.23</jooq.version>
         <!--<testcontainers.version>1.16.3</testcontainers.version>-->
 
         <db.username>sakila</db.username>
@@ -53,21 +54,18 @@
         </dependency>
 
         <dependency>
-            <groupId>org.testcontainers</groupId>
-            <artifactId>testcontainers</artifactId>
-            <version>${testcontainers.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-testcontainers</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>${testcontainers.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>mariadb</artifactId>
-            <version>${testcontainers.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -87,7 +85,7 @@
                         </goals>
                         <configuration>
                             <source>
-                                db = new org.testcontainers.containers.MariaDBContainer("mariadb:10.7.3")
+                                db = new org.testcontainers.containers.MariaDBContainer("mariadb:10.6")
                                         .withUsername("${db.username}")
                                         .withDatabaseName("${db.database}")
                                         .withPassword("${db.password}")
